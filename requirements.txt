@@ -1,0 +1,7 @@
+pandas
+mysql-connector-python
+snowflake-connector-python[pandas]
+python-dotenv
+dbt-core
+dbt-snowflake
+

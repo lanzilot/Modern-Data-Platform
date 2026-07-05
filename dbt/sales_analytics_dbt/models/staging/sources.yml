@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: SALES_ANALYTICS
+    schema: BRONZE
+    tables:
+      - name: CUSTOMER
+      - name: INVOICE1
+      - name: INVOICE2

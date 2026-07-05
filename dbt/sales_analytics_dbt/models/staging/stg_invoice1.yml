@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_invoice1
+    columns:
+      - name: invoice_id
+        tests:
+          - not_null
+          - unique
+
+      - name: invoice_no
+        tests:
+          - not_null
+
+      - name: customer_code
+        tests:
+          - not_null

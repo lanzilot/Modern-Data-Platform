@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_invoice2
+    columns:
+      - name: invoice_line_id
+        tests:
+          - not_null
+          - unique
+
+      - name: invoice_no
+        tests:
+          - not_null
+
+      - name: item_code
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: amount
+        tests:
+          - not_null

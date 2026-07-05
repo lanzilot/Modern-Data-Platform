@@ -1,0 +1,21 @@
+name: sales_analytics_dbt
+version: '1.0.0'
+config-version: 2
+
+profile: sales_analytics_dbt
+
+model-paths: ["models"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  sales_analytics_dbt:
+    staging:
+      +schema: null
+      +materialized: view
+    marts:
+      +schema: GOLD
+      +materialized: table

@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+logs/
+dbt/sales_analytics_dbt/target/
+dbt/sales_analytics_dbt/logs/

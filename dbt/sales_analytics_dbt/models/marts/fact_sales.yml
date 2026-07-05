@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fact_sales
+    columns:
+      - name: invoice_line_id
+        tests:
+          - not_null
+          - unique
+
+      - name: invoice_no
+        tests:
+          - not_null
+
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_id
+
+      - name: item_key
+        tests:
+          - relationships:
+              to: ref('dim_item')
+              field: item_key
+
+      - name: amount
+        tests:
+          - not_null
