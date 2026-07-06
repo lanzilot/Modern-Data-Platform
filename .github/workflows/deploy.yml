@@ -18,5 +18,6 @@ jobs:
         uses: astronomer/deploy-action@v0.13.0
         with:
           deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
+          workspace: cmr340pbs1z3101jzdaiqthiu
           wake-on-deploy: true
           deploy-type: image-and-dags
