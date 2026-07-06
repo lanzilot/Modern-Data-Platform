@@ -230,9 +230,9 @@ This platform enables organizations to
 
 ---
 
-# About Me
+# Note
 
-I designed and built this project end-to-end as a practical implementation of a production-style modern data platform.
+Deesigned and built this project end-to-end as a practical implementation of a production-style modern data platform.
 
 Responsibilities included
 
