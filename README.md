@@ -71,7 +71,6 @@ This project demonstrates how to modernize that process using cloud-native techn
 | Orchestration | Apache Airflow (Astronomer) |
 | CI/CD | GitHub Actions |
 | Version Control | Git |
-| Analytics | Power BI |
 | AI | Streamlit + LLM |
 
 ---
