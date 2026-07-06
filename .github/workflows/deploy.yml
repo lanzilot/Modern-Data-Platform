@@ -6,20 +6,17 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    env:
-      ASTRO_API_TOKEN: ${{ secrets.ASTRO_API_TOKEN }}
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Deploy to Astro
         uses: astronomer/deploy-action@v0.13.0
         with:
           deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
-          workspace: cmr340pbs1z3101jzdaiqthiu
+          wake-on-deploy: true
           deploy-type: image-and-dags
