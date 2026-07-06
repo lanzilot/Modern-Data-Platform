@@ -10,6 +10,10 @@ from airflow.operators.bash import BashOperator
 
 from include.etl.run_bronze_load import run_bronze_load
 
+
+DBT_PROJECT_DIR = "/usr/local/airflow/dbt/sales_analytics_dbt"
+
+
 default_args = {
     "owner": "rolan",
     "retries": 1,
@@ -34,33 +38,33 @@ with DAG(
 
     dbt_run_staging = BashOperator(
         task_id="dbt_run_staging_silver",
-        bash_command="""
-        cd /usr/local/airflow/dbt/sales_analytics_dbt &&
-        dbt run --select staging
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR} &&
+        dbt run --select staging --profiles-dir {DBT_PROJECT_DIR}
         """,
     )
 
     dbt_run_marts = BashOperator(
         task_id="dbt_run_marts_gold",
-        bash_command="""
-        cd /usr/local/airflow/dbt/sales_analytics_dbt &&
-        dbt run --select marts
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR} &&
+        dbt run --select marts --profiles-dir {DBT_PROJECT_DIR}
         """,
     )
 
     dbt_test_staging = BashOperator(
         task_id="dbt_test_staging",
-        bash_command="""
-        cd /usr/local/airflow/dbt/sales_analytics_dbt &&
-        dbt test --select staging
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR} &&
+        dbt test --select staging --profiles-dir {DBT_PROJECT_DIR}
         """,
     )
 
     dbt_test_marts = BashOperator(
         task_id="dbt_test_marts",
-        bash_command="""
-        cd /usr/local/airflow/dbt/sales_analytics_dbt &&
-        dbt test --select marts
+        bash_command=f"""
+        cd {DBT_PROJECT_DIR} &&
+        dbt test --select marts --profiles-dir {DBT_PROJECT_DIR}
         """,
     )
 
