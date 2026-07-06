@@ -1,0 +1,21 @@
+name: Deploy to Astro
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Astro
+        uses: astronomer/deploy-action@v0.13.0
+        with:
+          deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
+          token: ${{ secrets.ASTRO_API_TOKEN }}

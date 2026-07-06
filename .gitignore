@@ -4,3 +4,4 @@ __pycache__/
 logs/
 dbt/sales_analytics_dbt/target/
 dbt/sales_analytics_dbt/logs/
+dbt/sales_analytics_dbt/profiles.yml
