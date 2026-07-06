@@ -14,10 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Install Astro CLI
+        uses: astronomer/setup-astro-cli@v0.0.1
+
       - name: Deploy to Astro
         uses: astronomer/deploy-action@v0.13.0
         with:
           deployment-id: ${{ secrets.ASTRO_DEPLOYMENT_ID }}
-          workspace: cmr340pbs1z3101jzdaiqthiu
-          wake-on-deploy: true
           deploy-type: image-and-dags
+          wake-on-deploy: true
