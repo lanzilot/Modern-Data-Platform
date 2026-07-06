@@ -1,11 +1,14 @@
 from datetime import datetime, timedelta
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent))
 
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
 
 from include.etl.run_bronze_load import run_bronze_load
-
 
 default_args = {
     "owner": "rolan",
