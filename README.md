@@ -1,5 +1,4 @@
-# 🚀 Modern Data Platform | Railway MySQL → Snowflake → dbt → Apache Airflow (Astronomer) → Power BI
-
+# 🚀 Modern Data Platform | Railway MySQL → Snowflake → dbt → Apache Airflow (Astronomer)
 ## Enterprise-Grade End-to-End Data Engineering Pipeline
 
 This project demonstrates the design and implementation of a modern cloud-based data platform that automates data ingestion, transformation, orchestration, testing, and deployment using production-grade tools and best practices.
